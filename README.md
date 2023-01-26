@@ -6,7 +6,23 @@
 ## ---
 
 ---
-## ---
+## ---Valid Parenthesis---
+
+* [Test](https://www.codewars.com/kata/52774a314c2333f0a7000688/train/javascript)
+
+Solution / /
+
+``` javascript 
+function validParentheses(parens) { 
+  let counter = 0;
+  for (let i = 0; i < parens.length; i++) {
+    if (parens[i] === ')') counter--;
+    if (parens[i] === '(') counter++;
+    if (counter < 0) return false;
+    }
+  return counter == 0;
+}
+```
 
 ---
 ## ---String to Camel Case---
