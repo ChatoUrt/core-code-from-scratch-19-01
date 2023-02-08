@@ -1,9 +1,60 @@
 # core-code-from-scratch-19-01
 
-## ---
+## ---Counting duplicates---
+
+* [Test](https://www.codewars.com/kata/54bf1c2cd5b56cc47f0007a1/train/javascript)
+
+Solution / /
+
+``` javascript 
+function duplicateCount(text){
+    if (text == '') return 0;
+    text = text.toLowerCase().split('').sort().join('');
+    let CurrAc = '';
+    let count = 0;
+    for (let i = 0; i < text.length - 1; i++) {
+        if (text[i] == text[ i + 1 ]) {
+            if (CurrAc == text[i]) {
+                continue
+            }
+            count++
+            CurrAc = text[i];
+        }
+    }
+    return count;
+}
+```
 
 ---
-## ---
+## ---Encypt this---
+* [Test](https://www.codewars.com/kata/5848565e273af816fb000449/train/javascript)
+
+Solution / / 
+
+``` javascript
+var encryptThis = function (text) {
+  text = text.split(' ')
+  let fullCode = '';
+  let nose = [];
+  text.forEach((word) => {
+    let code = word.substring(0, 1).charCodeAt();
+    fullCode = code
+    if(word.length !== 1) {
+      fullCode = fullCode + word[word.length - 1];
+      if(word.length !== 2){
+        let str = word.substring(1);
+        let first = str[0];
+        let last = str[str.length - 1];
+        let middle = str.substring(1, str.length - 1);
+        fullCode = code + last + middle + first;
+      }
+    }
+    nose.push(fullCode);    
+  })
+  nose = nose.join(' ').trim();
+  return nose
+}
+```
 
 ---
 ## ---Valid Parenthesis---
